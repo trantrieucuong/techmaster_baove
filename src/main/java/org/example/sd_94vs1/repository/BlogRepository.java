@@ -1,0 +1,15 @@
+package org.example.sd_94vs1.repository;
+
+import org.example.sd_94vs1.entity.Blog;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.Query;
+
+import java.util.List;
+
+public interface BlogRepository extends JpaRepository<Blog, String> { // Đổi Integer thành String
+    List<Blog> findByUser_UserCode(String userCode, Sort sort);
+    @Query(value = "SELECT b FROM Blog b where b.status=true ORDER BY b.createdAt DESC")
+    List<Blog> findTop8ByOrderByCreatedAtDesc(Pageable pageable);
+}

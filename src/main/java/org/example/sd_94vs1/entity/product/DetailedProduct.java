@@ -1,0 +1,54 @@
+package org.example.sd_94vs1.entity.product;
+
+import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+import org.example.sd_94vs1.entity.product.Product;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@FieldDefaults(level = AccessLevel.PRIVATE)
+@Entity
+@Table(name = "detailed_products")
+public class DetailedProduct {
+    @Id
+    @Column(name = "detailed_product_code", length = 50, nullable = false)
+    String detailedProductCode;
+
+    @ManyToOne
+    @JoinColumn(name = "product_code", referencedColumnName = "product_code", nullable = false)
+    Product product;
+
+    @Column(name = "description", length = 255) // Đổi từ 'describe' thành 'description'
+    String description;
+
+    @Column(name = "quantity")
+    int quantity;
+
+    @Column(name = "price_vnd", precision = 10, scale = 2)
+    BigDecimal priceVND;
+
+    @Column(name = "date")
+    @Temporal(TemporalType.DATE)
+    Date date;
+
+    @Column(name = "edit_date")
+    @Temporal(TemporalType.DATE)
+    Date editDate;
+
+    @PrePersist
+    protected void onCreate() {
+        date = new Date();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        editDate = new Date();
+    }
+}

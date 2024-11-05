@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{admin/layout/layout :: layout(~{:: title}, ~{:: #css}, ~{:: .content-wrapper}, ~{:: #js})}">
+
+<head>
+    <title>Tất cả manufacturer</title>
+
+    <th:block id="css">
+
+    </th:block>
+</head>
+
+<body>
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-12">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/admin/dashboard">Dashboard</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            Danh sách nhà cung cấp
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row py-2">
+                <div class="col-12">
+
+                    <a href="/admin/manufacturer" type="button" class="btn btn-info">
+                        <i class="fas fa-redo"></i> Refresh
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <table id="table-manufacturer" class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Tên Nhà Cung Cấp</th>
+                                    <th>Quốc Gia</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="manufacturer : ${manufacturers}">
+                                    <td>
+                                        <a th:href="@{/admin/manufacturers/{id}/detail (id=${manufacturer.manufacturerCode})}"
+                                           th:text="${manufacturer.name}"></a>
+                                    </td>
+                                    <td th:text="${manufacturer.country}"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+</body>
+</html>
