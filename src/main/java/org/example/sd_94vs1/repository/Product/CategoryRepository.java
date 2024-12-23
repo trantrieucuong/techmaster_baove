@@ -4,7 +4,11 @@ import org.example.sd_94vs1.entity.product.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, String> {
-    // Bạn có thể định nghĩa các phương thức truy vấn tùy chỉnh tại đây
+    Optional<Category> findByCategoryCode(String categoryCode);
+
+
 }

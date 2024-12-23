@@ -23,4 +23,12 @@ public class ProductType {
     @Column(name = "description", length = 255)
     String description;
 
+    @Override
+    public String toString() {
+        return "ProductType{" +
+                "productTypeCode='" + productTypeCode + '\'' +
+                ", productTypeName='" + productTypeName + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

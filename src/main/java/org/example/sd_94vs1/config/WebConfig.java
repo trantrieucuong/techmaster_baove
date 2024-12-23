@@ -15,16 +15,22 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authenticationInterceptor)
-                .addPathPatterns(""); // Chỉ áp dụng cho các request tới các đường dẫn bên dưới
+                .addPathPatterns("/api/reviews/**")
+                .excludePathPatterns("/chat");
 
+        // Interceptor kiểm tra quyền truy cập admin
         registry.addInterceptor(roleBasedAuthInterceptor)
-                .addPathPatterns("/admin", "/admin/**", "/api/admin/**") // Chỉ áp dụng cho các request tới các đường dẫn bên dưới
+                .addPathPatterns("/admin", "/admin/**", "/api/admin/**")
                 .excludePathPatterns("/admin-assets/**", "/web/js/**", "/web/css/**", "/web/image/**");
     }
-
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/image_uploads/**")
                 .addResourceLocations("file:image_uploads/");
+
+        registry.addResourceHandler("/chat/**")
+                .addResourceLocations("classpath:/static/chat/");
     }
+
+
 }

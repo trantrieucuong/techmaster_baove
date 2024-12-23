@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.data.domain.PageRequest;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 @Service
@@ -135,4 +136,7 @@ public class BlogService {
 public List<Blog> getLatestBlogs(int limit) {
     return blogRepository.findTop8ByOrderByCreatedAtDesc(PageRequest.of(0, limit));
 }
+    public Optional<Blog> findByBlogCode(String blogCode) {
+        return blogRepository.findByBlogCode(blogCode);
+    }
 }
