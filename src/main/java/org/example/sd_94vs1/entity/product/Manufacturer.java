@@ -22,4 +22,13 @@ public class Manufacturer {
 
     @Column(name = "country", length = 100)
     String country;
+
+    @Override
+    public String toString() {
+        return "Manufacturer{" +
+                "manufacturerCode='" + manufacturerCode + '\'' +
+                ", name='" + name + '\'' +
+                ", country='" + country + '\'' +
+                '}';
+    }
 }

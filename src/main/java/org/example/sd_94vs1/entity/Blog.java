@@ -59,4 +59,21 @@ public class Blog {
         }
 
     }
+
+    @Override
+    public String toString() {
+        return "Blog{" +
+                "blogCode='" + blogCode + '\'' +
+                ", title='" + title + '\'' +
+                ", slug='" + slug + '\'' +
+                ", description='" + description + '\'' +
+                ", content='" + content + '\'' +
+                ", thumbnail='" + thumbnail + '\'' +
+                ", status=" + status +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", publishedAt=" + publishedAt +
+                ", user=" + user +
+                '}';
+    }
 }

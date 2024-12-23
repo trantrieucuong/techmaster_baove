@@ -53,8 +53,7 @@
         <div class="sidebar">
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                    data-accordion="false" id="main-menu">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" id="main-menu">
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-chart-pie"></i>
@@ -69,9 +68,25 @@
                                     <p>Dashboard</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="/admin/admin-all-shoppingcarts" class="nav-link pl-5">
+                                    <p>Giỏ Hàng</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/admin/hoa-don" class="nav-link pl-5">
+                                    <p>Đơn hàng</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/admin/trang-thai-don-hang" class="nav-link pl-5">
+                                    <p>Trạng thái đơn hàng</p>
+                                </a>
+                            </li>
                         </ul>
                     </li>
-                    <li class="nav-item">
+
+                <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-book"></i>
                             <p>
@@ -83,6 +98,22 @@
                             <li class="nav-item">
                                 <a href="/admin/reports" class="nav-link pl-5">
                                     <p>Báo cáo</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-book"></i>
+                            <p>
+                                Kênh chát
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/admin/chatus" class="nav-link pl-5">
+                                    <p>kênh chat fa</p>
                                 </a>
                             </li>
                         </ul>
@@ -134,6 +165,29 @@
 
                     <li class="nav-item">
                         <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-tree"></i>
+                            <p>
+                                Sản Phẩm
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/admin/product" class="nav-link pl-5">
+                                    <p>Quản lý Sản Phẩm</p>
+                                </a>
+                                <a href="/admin/category" class="nav-link pl-5">
+                                    <p>Danh Mục Sản Phẩm</p>
+                                </a>
+                                <a href="/admin/detailproduct" class="nav-link pl-5">
+                                    <p>Sản Phẩm Chi Tiết</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-paper-plane"></i>
                             <p>
                                 system user
@@ -161,25 +215,32 @@
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="/admin/manufacturer" class="nav-link pl-5">
-                                    <p>Danh sách Cung cấp</p>
+                                    <p>Danh Sách Cung Cấp</p>
                                 </a>
-
                             </li>
                         </ul>
                     </li>
+
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-folder-open"></i>
+                            <i class="nav-icon fas fa-paper-plane"></i>
                             <p>
-                                Phân Loại
+                                Bảo Hành
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/admin/category" class="nav-link pl-5">
-                                    <p>Danh sách thể loại</p>
+                                <a href="/admin/ql-warranty" class="nav-link pl-5">
+                                    <p>Quản Lý Bảo Hành</p>
                                 </a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a href="/admin/yc-warranty" class="nav-link pl-5">
+                                    <p>Yêu Cầu Bảo Hành</p>
+                                </a>
+
                             </li>
                         </ul>
                     </li>

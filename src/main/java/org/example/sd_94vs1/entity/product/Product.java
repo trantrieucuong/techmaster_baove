@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Getter
@@ -59,5 +60,25 @@ public class Product {
     @PreUpdate
     protected void onUpdate() {
         editDate = new Date();
+    }
+    // Thêm trường priceVND
+    @Transient
+    private BigDecimal priceVND;
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productCode='" + productCode + '\'' +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", manufacturer=" + manufacturer +
+                ", category=" + category +
+                ", date=" + date +
+                ", editDate=" + editDate +
+                ", status='" + status + '\'' +
+                ", image='" + image + '\'' +
+                ", productType=" + productType +
+                ", priceVND=" + priceVND +
+                '}';
     }
 }

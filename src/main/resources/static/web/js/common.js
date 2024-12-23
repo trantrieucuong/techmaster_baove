@@ -47,3 +47,4 @@ function activeMenu() {
 }
 
 activeMenu()
+// thông báo

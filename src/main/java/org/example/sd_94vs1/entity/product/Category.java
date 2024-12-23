@@ -32,4 +32,16 @@ public class Category {
     @Column(name = "status", length = 50)
     String status;
     String img;
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "categoryCode='" + categoryCode + '\'' +
+                ", name='" + name + '\'' +
+                ", date=" + date +
+                ", editDate=" + editDate +
+                ", status='" + status + '\'' +
+                ", img='" + img + '\'' +
+                '}';
+    }
 }
